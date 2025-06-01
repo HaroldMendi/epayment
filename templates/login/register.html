@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/generic.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base-font.css' %}" rel="stylesheet">
+</head>
+<body style="background-color: var(--line-clr);">
+    <main>
+        <div id="login-form">
+           <div class="form">
+                <form action="" method="post">
+                    {% for message in messages %}
+                        <p id="messages" style="text-align: center;">{{ message }}</p>
+                    {% endfor %}
+                    {% csrf_token %}
+                    
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                    <div id="username-error"></div>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                    {{ form.password1 }}
+                    {{ form.password1.errors }}
+                    {{ form.password2 }}
+                    {{ form.password2.errors }}
+            
+                    <div style="margin-bottom: 2px;">
+                        <label for="" style="display: block; padding-left: 13px; text-indent: -15px;">Show Password: 
+                           <input style="width: 13px; height: 13px; padding: 0; margin: 0; position: relative; top: 1px; left: 6px;" type="checkbox" id="box" onclick ="reveal()">
+                        </label>
+                   </div>
+
+                    <div>
+                        <div style="margin-bottom: 20px;">
+                            <button type="submit" name="submit-btn">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        <div>
+                            <a class="back-btn" href="{% url 'login' %}">
+                                <span>Back</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+<script type="text/javascript">
+    function reveal() {
+        if(document.getElementById('box').checked) {
+            {document.getElementById("id_password1").type='text';}
+            {document.getElementById("id_password2").type='text';}
+            }
+        else {
+        document.getElementById("id_password1").type='password';
+        document.getElementById("id_password2").type='password';
+        }
+    }
+</script> 
+</body> 
+</html>

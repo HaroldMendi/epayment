@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <p id="title">Create Profile</p>
+{% endblock title %}
+
+{% block section %}
+<div id="profile-creation-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }} 
+        <div id="div-btn">
+            <button type="submit" class="submit-btn">Save</button>
+        </div>
+    </form>
+</div>
+{% endblock section %}

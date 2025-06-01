@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    {% include '_snippets/_scripts.html' %}
+</head>
+<body>
+    {% include '_snippets/_nav_side.html' %}
+    <main>
+        <div class="alert-messages-section" style="margin-bottom: 2px;">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">
+                            {{ message }}
+                            <a href="" class="close">X</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <!-- <div class="container"> -->
+        <div class="">
+            {% block title %} {% endblock title %}
+    
+            {% block section %} {% endblock section %}
+            
+            {% block script %} {% endblock script %}
+        </div>
+    </main>
+</body>
+
+</html>

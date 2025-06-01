@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <p id="title">Profile Lists</p>
+{% endblock title %}
+
+{% block section %}    
+<div id="list-view">
+    <div class="search-box">
+        <form action="" method="GET" style="display: flex;">
+            <input type="text" id="searchbox" name="search" placeholder="Search for names..">
+            <button type="submit" class="a-success-btn" style="margin-left: 5px; height: 45px; text-align: 
+            center; font-size: large;">
+                <div style="padding: 9px 1px;">
+                    <span>Search</span>
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="profile-table">
+        <table id="myTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Contact Person</th>
+                    <th>Mobile of Contact Person</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page_obj %}
+                <tr>
+                    <td>{{ item.fname }}</td>
+                    <td>{{ item.lname }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.contactperson }}</td>
+                    <td>{{ item.mobileofcontactperson }}</td>
+                    <td>
+                        <div style="display: flex;">
+                            {% if perms.profiles.change_profile %}
+                            <a class="a-danger-btn" style="margin-right: 3px;" href="{% url 'profile_update' item.slug %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
+                                Update
+                            </a>
+                            {% endif %}
+                            {% if perms.profiles.view_profile %}
+                            <a class="a-success-btn" href="{% url 'profile_detail' item.slug %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M630-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160h-56L556-348q-21 14-45.5 21t-50.5 7q-75 0-127.5-52.5T280-500q0-75 52.5-127.5T460-680q75 0 127.5 52.5T640-500q0 27-7 51t-21 45l164 164h24v-480H160v480h390l80 80ZM460-400q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM160-240v-480 480Z"/></svg>
+                                View
+                            </a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                    <tr><td colspan="7" style="text-align: center; font-size: large;">No Data found</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="custom-pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?search={{ search }}&page=1">&laquo; first</a>
+                <a href="?search={{ search }}&page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?search={{ search }}&page={{ page_obj.next_page_number }}">next</a>
+                <a href="?search={{ search }}&page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+    
+{% endblock section %}

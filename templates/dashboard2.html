@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%}
+    <p id="title">Dashboard</p>
+{% endblock title %}
+{% block section %}
+
+<div class="container border border-primary border-3 my-5">
+    <div class="row">
+        <div class="col">
+            <div class="p-5 bg-primary border border-danger border-2"> col 1</div>
+        </div>
+        <div class="col border border-info border-3">
+            <div class="p-5 bg-secondary"> col 2</div>
+        </div>
+        <div class="col">
+            <div class="p-5 bg-danger"> col 3</div>
+        </div>
+    </div>
+    <div class="border border-secondary border-2 my-3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate illo nihil, quia assumenda nulla nesciunt facilis ex incidunt asperiores commodi impedit repellat dolore illum quaerat reiciendis laborum molestias. Similique, modi.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus libero iusto nostrum voluptas deserunt expedita, atque aspernatur alias velit non, magni sapiente nulla nam at voluptates perspiciatis? Eum, aliquid accusamus?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eum, repellendus illum voluptatum dolore quibusdam, inventore maxime earum est doloribus consectetur mollitia deleniti rem vitae nobis? Saepe minima ea vitae.</p>
+    </div>
+
+    <!-- get updates / modal trigger -->
+    <section class="bg-light border border-danger border-3" style="border-radius: 1rem;">
+        <!-- <div class="container"> -->
+            <div class="text-center">
+                <h2>Stay in the Loop</h2>
+                <p class="lead">Get the latest updates..</p>
+            </div>
+            <div class="row justify-content-center pb-2">
+                <div class="col-md-8 border border-danger text-center rounded-3">
+                    <p class="text-muted my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis labore saepe in nesciunt iste ex minus nemo, adipisci officia consectetur harum, voluptatibus cum? Reiciendis aspernatur neque maxime fuga ipsam dolorum?</p>
+                </div>
+            </div>
+        <!-- </div> -->
+    </section>
+
+{% endblock section %} 

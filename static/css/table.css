@@ -1,0 +1,72 @@
+/* ---Generic List Table------------------------------------------ */
+
+#list-view .custom-pagination {
+  margin-top: 2px;
+  text-align: center;
+  padding: 5px;
+  height: 22px;
+  justify-content: center;
+  align-items: center;
+}
+
+#list-view .step-links a {
+  text-decoration: none;
+  border: 1px solid #d1d9e0;
+  border-radius: .5em;
+  padding: 1px 5px;
+  background-color: #f6f8fa;
+  color: #25292e;
+}
+
+#list-view .step-links a:hover {
+  background-color: #eff2f5;
+}
+
+#searchbox {  
+    width: 40%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    margin-bottom: 12px; /* Add some space below the input */
+    border-radius: .5em;
+    font-size: large;
+}
+
+#searchbox2 {
+  width: 40%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  margin-bottom: 12px; /* Add some space below the input */
+  border-radius: .5em;
+  font-size: large;
+}
+
+#myTable {
+    font: inherit;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#myTable td, #myTable th {
+    /* border: 1px solid #ddd; */
+    padding: 5px;
+    border-bottom: 1px solid gray;
+  }
+
+#myTable a {
+  text-decoration: none;
+}
+
+#myTable tr:hover {background-color: #ddd;}
+
+#myTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#myTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /* background-color: var(--line-clr); */
+    /* color: white; */
+  }
+/* ---Generic List Table-------------------------------------------- */

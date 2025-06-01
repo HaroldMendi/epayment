@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block section %}
+<div id="profile-update-form">
+    <form action="{% url 'profile_update' pk=data.id %}" method="POST" onsubmit="submitUpdateForm(event, this)">
+        {% csrf_token %}
+        <div class="modal-header">
+            <h5 class="modal-title">Update Profile for: {{ data.fname }} {{ data.lname }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body row">
+            {{ form.as_p }}
+        </div>
+        <div class="modal-footer d-sm-flex justify-content-center pb-2">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a class="btn btn-danger" href="{% url 'profile_list' %}">Back</a>
+        </div>
+    </form>
+</div>
+<link href="{% static 'css/generic.css' %}" rel="stylesheet">
+{% endblock section %}

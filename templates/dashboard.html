@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{%block title%}
+    <p id="title">Dashboard</p>
+{% endblock title %}
+{% block section %}
+<div class="main-container border border-danger border-2" style="padding: 5px;">
+    <div id="dashboard-summary-main" class="border border-primary border-2">
+        <div id="dashboard-summary-1st">
+            <div class="summary-1st-box1">
+                <div>
+                    <p style="display: flex;justify-content: center;"><svg xmlns="http://www.w3.org/2000/svg" height="80px" viewBox="0 -960 960 960" width="80px" fill="#5f6368"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/></svg></p>
+                </div>
+                <div>
+                    <p style="color: white; font-size: large; padding-left: 2px;">Payment</p>
+                </div>
+                <div style=" float: right;">
+                    <p style="color: white; font-size: large;">Summary</p>
+                </div>
+            </div>
+            <div class="summary-1st-box2">
+                <div class="summary-1st-box2-number">
+                    <p>{{ data }}</p>
+                </div>
+                <div style="color: white; text-align: center;">
+                    <p>Total owners</p>
+                </div>
+            </div>
+        </div>
+        <div id="dashboard-summary-2nd">
+            <p>Quick action buttons</p>
+        </div>
+        <div id="dashboard-summary-3rd">
+            <p>Quick Buttons</p>
+            <div style="padding: 20px;">
+                <div style="display: flex; justify-content: center;">
+                    <div class="dashboard-button" style="margin-right: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                        <a href="{% url 'profile_create' %}">Profile Create</a>
+                    </div>
+                    <div class="dashboard-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-600v-80h560v80H280Zm0 160v-80h560v80H280Zm0 160v-80h560v80H280ZM160-600q-17 0-28.5-11.5T120-640q0-17 11.5-28.5T160-680q17 0 28.5 11.5T200-640q0 17-11.5 28.5T160-600Zm0 160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440Zm0 160q-17 0-28.5-11.5T120-320q0-17 11.5-28.5T160-360q17 0 28.5 11.5T200-320q0 17-11.5 28.5T160-280Z"/></svg>
+                        <a href="{% url 'profile_list' %}">Profile List</a>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center ;margin-top: 20px;">
+                    <div class="dashboard-button" style="margin-right: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                        <a href="{% url 'house_create' %}">House Create</a>
+                    </div>
+                    <div class="dashboard-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M280-600v-80h560v80H280Zm0 160v-80h560v80H280Zm0 160v-80h560v80H280ZM160-600q-17 0-28.5-11.5T120-640q0-17 11.5-28.5T160-680q17 0 28.5 11.5T200-640q0 17-11.5 28.5T160-600Zm0 160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440Zm0 160q-17 0-28.5-11.5T120-320q0-17 11.5-28.5T160-360q17 0 28.5 11.5T200-320q0 17-11.5 28.5T160-280Z"/></svg>
+                        <a href="{% url 'house_list' %}">House List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="history-payment-board" style="border: 1px solid violet;border-radius: .5em; height: 18em; margin-top: 5px; padding: 10px;">
+        <p style="border: 2px solid green; width: 200px;">{{ data2 }}</p>
+        <div class="border border-danger">
+            <button class="btn btn-secondary btn-lg ms-5">Button</button>
+        </div>
+        <div class="m-3 p-3 shadow-sm">Element with small box shadow</div>
+        <div class="m-3 p-3 shadow-lg">Element with large box shadow</div>
+        <div class="m-3 p-3 shadow">Element with box shadow only</div>
+    </div>
+</div>
+{% endblock section %} 

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/generic.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base-font.css' %}" rel="stylesheet">
+</head>
+<body style="background-color: var(--line-clr);">
+        <div id="login-form">
+            <div class="form">
+                <form action="" method="post">
+                    {% for message in messages %}
+                        <p id="messages" style="text-align: center;">{{ message }}</p>
+                    {% endfor %}
+                    {% csrf_token %}
+                    {{ form }}
+                    <div>
+                         <label for="" style="display: block; padding-left: 13px; text-indent: -15px;">Show Password: 
+                            <input style="width: 15px; height: 15px; padding: 0; margin: 0; position: relative; top: 1px; left: 6px;" type="checkbox" id="box" onclick ="reveal()">
+                         </label>
+                    </div>
+                    <p><a href="{% url 'register' %}">Register here!</a></p>
+                    <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<script>
+    function reveal() {
+        if(document.getElementById('box').checked)
+            {document.getElementById("id_password").type='text';}
+        else
+        document.getElementById("id_password").type='password';
+    }
+</script> 
+</body>
+</html>

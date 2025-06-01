@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <p id="title">Profile Lists</p>
+{% endblock title %}
+
+{% block section %}    
+<div id="list-view">
+    <div class="search-box">
+        <form action="" method="GET" class="d-sm-flex">
+            <input type="text" class="col-sm-3 me-2 rounded-3 fs-5" id="" name="search" placeholder="Search for names..">
+            <button type="submit" class="btn btn-primary">
+                <div >
+                    <span>Search</span>
+                </div>
+            </button>
+        </form>
+    </div>
+    <div class="profile-table mt-5">
+        <table id="" class="table table-striped table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th >Last Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Contact Person</th>
+                    <th>Mobile of Contact Person</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page_obj %}
+                <tr>
+                    <td>{{ item.fname }}</td>
+                    <td>{{ item.lname }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.mobile }}</td>
+                    <td>{{ item.contactperson }}</td>
+                    <td>{{ item.mobileofcontactperson }}</td>
+                    <td class="d-sm-flex justify-content-center">
+                        <div class="d-sm-flex">
+                            {% if perms.profiles.change_profile %}
+                            <!-- Modal Trigger -->
+                            <div class="pe-2">
+                                <button class="btn btn-primary" onclick="openUpdateModal({{ item.id }})">
+                                    Update
+                                </button>
+                            </div>
+                            <!-- Modal Trigger -->
+                            {% endif %}
+                            {% if perms.profiles.view_profile %}
+                            <a class="btn btn-warning d-sm-flex p-2" href="{% url 'profile_detail' item.slug %}">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M630-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160h-56L556-348q-21 14-45.5 21t-50.5 7q-75 0-127.5-52.5T280-500q0-75 52.5-127.5T460-680q75 0 127.5 52.5T640-500q0 27-7 51t-21 45l164 164h24v-480H160v480h390l80 80ZM460-400q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29ZM160-240v-480 480Z"/></svg>
+                                View
+                            </a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% empty %}
+                    <tr><td colspan="7" class="text-sm-center lead">No Data found</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalContent">
+            <!-- AJAX loads content here -->
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+
+    <!-- PAGINATION -->
+    <div class="custom-pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?search={{ search }}&page=1">&laquo; first</a>
+                <a href="?search={{ search }}&page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?search={{ search }}&page={{ page_obj.next_page_number }}">next</a>
+                <a href="?search={{ search }}&page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    <!-- END PAGINATION -->
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+{% endblock section %}

@@ -1,0 +1,362 @@
+/* -------title------------- */
+#title {
+    /* border: 2px solid green; */
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 300px;
+}
+/* -------title------------- */
+/*--------------------- Profile Creation Form-------------------- */
+#profile-creation-form label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+}
+
+#profile-creation-form input[type=text] {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+#profile-creation-form input[type=number] {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+#profile-creation-form input[type=number]::-webkit-inner-spin-button, 
+#profile-creation-form input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+
+#profile-creation-form select {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+#profile-creation-form ul {
+    text-align: center;
+    color: red;
+    list-style: none;
+}
+/*--------------------- Profile Creation Form-------------------- */
+
+
+/*--------------------- PROFILE UPDATE FORM-------------------- */
+#profile-update-form label {
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+}
+
+#profile-update-form input[type=text] {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+
+}
+
+#profile-update-form input[type=number] {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+#profile-update-form input[type=number]::-webkit-inner-spin-button, 
+#profile-update-form input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+
+#profile-update-form select {
+    width: 40%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+#profile-update-form ul {
+    text-align: center;
+    color: red;
+    list-style: none;
+}
+/*--------------------- Profile Creation Form-------------------- */
+
+/* submit/save button */
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    width: 150px;
+    height: 40px;
+    font: inherit;
+    border-radius: .5em;
+}
+
+.submit-btn:hover {
+    background-color: #58d35c;
+}
+/* submit/save button */
+
+/* ----------A-TAG-BUTTON--------------------------- */
+.a-back-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 7px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: .5px solid rgb(70, 67, 67);
+}
+.generic-a-tag {
+    color: white;
+    text-decoration: none;
+}
+.a-danger-btn {
+    background-color: #f44336;
+    color: white;
+    padding-right: 10px;
+    padding-left: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    display: flex;
+    border: .5px solid rgb(70, 67, 67);
+    border-radius: .5em;
+}
+.a-danger-btn:hover {
+    background-color: #c73c32;
+}
+.a-success-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding-right: 10px;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    display: flex;
+    border: .5px solid rgb(70, 67, 67);
+    border-radius: .5em;
+}
+
+.a-success-btn:hover {
+    background: #3a803c;
+}
+/* ----------A-TAG-BUTTON--------------------------- */
+
+/* ------LOGIN FORM----------------------------------------- */
+#login-form {
+    width: 400px;
+    padding: 8% 0 0;
+    margin: auto;
+
+}
+
+#login-form .back-btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 134px;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+    /* background-color: var(--line-clr); */
+}
+
+.form input {
+outline: 0;
+background: #f2f2f2;
+width: 100%;
+border: 0;
+margin: 0 0 10px;
+padding: 15px;
+box-sizing: border-box;
+font-size: 18px;
+font: inherit;
+}
+.form button {
+text-transform: uppercase;
+outline: 0;
+background: #4CAF50;
+width: 100%;
+border: 0;
+padding: 15px;
+color: #FFFFFF;
+font-size: 14px;
+-webkit-transition: all 0.3 ease;
+transition: all 0.3 ease;
+cursor: pointer;
+font: inherit;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+    background: #3a803c;
+}
+#login-form .back-btn:hover {
+    background: #3a803c;
+}
+/* -----LOGIN FORM--------------------------------------- */
+
+
+/* ------ALERT MESSAGES------------------------------ */
+ul.messages {
+    width: 100%;
+    /* margin-bottom: 10px; */
+    border-radius: .5em;
+    padding:0;
+    list-style-type:
+    none;
+}
+ul.messages li.success,
+ul.messages li.warning,
+ul.messages li.error,
+ul.messages li.info {
+    margin:0;
+    padding:14px 20px;
+    list-style:none;
+    color:#fff;
+    border-radius: .5em;
+}
+
+ul.messages li.success { background:#81ce81; }
+ul.messages li.success a { color:#0ac33e; }
+
+ul.messages li.error { background:#a30029; color:#e9828e; }
+ul.messages li.error a { color:#e9828e; }
+
+ul.messages li.info { background:#faffae; color:#696b4e; }
+ul.messages li.info a { color:#1586de; }
+
+ul.messages li.warning { background:#de9404; }
+ul.messages li.warning a { color:#f49000; }
+
+ul.messages li a.close {
+    margin:0;
+    float:right;
+    opacity:1;
+    border:0;
+    box-shadow:none;
+    text-shadow:none;
+}
+
+/* .login-form {
+    float:left;
+} */
+/* ------ALERT MESSAGES------------------------------ */
+
+/* ----DASHBOARD BUTTONS and ETC----------------------------------- */
+#dashboard-summary-main {
+    border: 3px solid gray;
+    width: auto;
+    height: 150px;
+    padding: 5px; 
+    display: flex;
+    justify-content: space-between;
+}
+#dashboard-summary-1st {
+    border: 1px solid #1F51FF;
+    background-color: #1F51FF;
+    border-radius: .5em;
+    height: auto;
+    width: 32%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#dashboard-summary-1st .summary-1st-box1 {
+    width: 150px;
+    height: 135px;
+}
+
+#dashboard-summary-1st .summary-1st-box2 {
+    border: 1px solid yellow;
+    width: 150px;
+    height: 135px;
+}
+
+#dashboard-summary-1st .summary-1st-box2-number {
+    justify-content: center;
+    display: flex;
+    color: white;
+    font-size: 60px; 
+    font-weight: 500; 
+    border: 2px solid green;
+    width: auto;
+    height: 60px;
+}
+
+#dashboard-summary-1st .summary-1st-box2-number p {
+    border: 3px solid yellow;
+    padding-top: 22px;
+}
+
+#dashboard-summary-2nd {
+    border: 1px solid green;
+    border-radius: .5em; 
+    height: auto;
+    width: 32%;
+}
+
+#dashboard-summary-3rd {
+    border: 1px solid yellow;
+    border-radius: .5em;
+    height: auto; 
+    width: 32%;
+    justify-content: space-between;
+}
+#dashboard-summary-3rd  a {
+    border-radius: .5em;
+    text-decoration: none;
+    color: #25292e;
+    align-items: center;
+}
+
+#dashboard-summary-3rd .dashboard-button {
+    display: flex;
+    background-color: #f6f8fa;
+    border:1px solid #d1d9e0 ;
+    border-radius: .5em;
+    padding: 3px 10px 5px 2px;
+    text-wrap: nowrap;
+}
+
+#dashboard-summary-3rd .dashboard-button:hover {
+    background-color: #eff2f5;
+}
+/* ----DASHBOARD BUTTONS and ETC----------------------------------- */
+
+
+
+
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <p id="title">Register Block and Lot</p>
+{% endblock title %}
+
+{% block section %}
+    <div id="profile-creation-form">
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="div-btn" style="margin-top: 10px;">
+            <button type="submit" class="submit-btn">Save</button>
+        </div>
+        </form>
+    </div>
+{% endblock section %}

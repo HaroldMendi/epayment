@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <p id="title">Profile Details</p>
+{% endblock title %}
+
+{% block section %}    
+    <div class="profile-detailview" style="margin: auto;">
+        <label for="" class="generic-label">Firstname: </label><span>{{ data.fname  }}</span><br>
+        <label for="">Lastname: </label><span>{{ data.lname  }}</span><br>
+        <label for="">Email: </label><span>{{ data.email  }}</span><br>
+        <label for="">Contact Number: </label><span>{{ data.mobile  }}</span><br>
+        <label for="">Contatct Person: </label><span>{{ data.contactperson  }}</span><br>
+        <label for="">Mobile of contact person: </label><span>{{ data.mobileofcontactperson  }}</span><br>
+        <a class="a-back-btn" href="{% url 'profile_list' %}">Back</a>
+    </div>
+{% endblock section %}
